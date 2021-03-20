@@ -1,0 +1,55 @@
+for filename in `.*`:
+    print(filename)
+    
+# Print a Json
+import pprint
+import requests
+r = requests.get('https://50wzgh.deta.dev/randomquote')
+pprint.pprint(r.json())
+
+# Use Libraries
+import sys
+print(sys.version)
+
+# Set env variable
+$GOAL = 'Become the Lord of the Files'
+print($GOAL)
+
+# Check env variable
+'HOME' in ${...} 
+
+def get_wireless_interface():
+    """Returns devicename of first connected wifi, None otherwise"""
+    for line in !(nmcli device):
+        dev, typ, state, conn_name = line.split(None, 3)
+        if typ == 'wifi' and state == 'connected':
+            return dev
+
+Save the output of normal command line response as a variable    
+x = $(ls -l)
+
+# The @(<expr>) operator
+@(['echo', 'hello', 'world'])
+
+# Complex Pyton Commands fed to a subprocess
+for i in range(20):
+    $[touch @('file%02d' % i)]
+    
+# Allowing the output of a command to replace the command itself
+@([i.strip() for i in $(cmd).split()])
+
+@(['echo', 'hello', 'world']) > hello.txt
+
+# Find all .py files 0 or more directories deep
+[ p for p in g`**/*` if re.match(r"(.*/)*\w+\.py", p) ]
+
+# Set Alias
+aliases['gco'] = 'git checkout'
+
+def _banana(args, stdin=None):
+    return ('My spoon is tooo big!', None)
+aliases['banana'] = _banana
+
+aliases['banana'] = lambda: "Banana for scale.\n"
+
+del aliases['banana']
